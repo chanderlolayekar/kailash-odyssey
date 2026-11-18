@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --background: 222 50% 8%;
+    --foreground: 40 20% 94%;
+    --card: 222 40% 12%;
+    --card-foreground: 40 20% 94%;
+    --popover: 222 40% 12%;
+    --popover-foreground: 40 20% 94%;
+    --primary: 222 82% 55%;
+    --primary-foreground: 40 20% 94%;
+    --secondary: 222 30% 18%;
+    --secondary-foreground: 40 20% 94%;
+    --muted: 222 30% 18%;
+    --muted-foreground: 222 15% 55%;
+    --accent: 36 90% 44%;
+    --accent-foreground: 40 20% 94%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 25% 20%;
+    --input: 222 25% 20%;
+    --ring: 222 82% 55%;
+    --chart-1: 222 82% 55%;
+    --chart-2: 36 90% 44%;
+    --chart-3: 40 20% 94%;
+    --chart-4: 222 30% 40%;
+    --chart-5: 0 70% 50%;
+    --radius: 0.75rem;
+    --sidebar-background: 222 40% 10%;
+    --sidebar-foreground: 40 20% 94%;
+    --sidebar-primary: 222 82% 55%;
+    --sidebar-primary-foreground: 40 20% 94%;
+    --sidebar-accent: 222 30% 18%;
+    --sidebar-accent-foreground: 40 20% 94%;
+    --sidebar-border: 222 25% 20%;
+    --sidebar-ring: 222 82% 55%;
+  }
+
+  .dark {
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --background: 222 50% 8%;
+    --foreground: 40 20% 94%;
+    --card: 222 40% 12%;
+    --card-foreground: 40 20% 94%;
+    --popover: 222 40% 12%;
+    --popover-foreground: 40 20% 94%;
+    --primary: 222 82% 55%;
+    --primary-foreground: 40 20% 94%;
+    --secondary: 222 30% 18%;
+    --secondary-foreground: 40 20% 94%;
+    --muted: 222 30% 18%;
+    --muted-foreground: 222 15% 55%;
+    --accent: 36 90% 44%;
+    --accent-foreground: 40 20% 94%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 25% 20%;
+    --input: 222 25% 20%;
+    --ring: 222 82% 55%;
+    --chart-1: 222 82% 55%;
+    --chart-2: 36 90% 44%;
+    --chart-3: 40 20% 94%;
+    --chart-4: 222 30% 40%;
+    --chart-5: 0 70% 50%;
+    --sidebar-background: 222 40% 10%;
+    --sidebar-foreground: 40 20% 94%;
+    --sidebar-primary: 222 82% 55%;
+    --sidebar-primary-foreground: 40 20% 94%;
+    --sidebar-accent: 222 30% 18%;
+    --sidebar-accent-foreground: 40 20% 94%;
+    --sidebar-border: 222 25% 20%;
+    --sidebar-ring: 222 82% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .glass-shard {
+    @apply backdrop-blur-xl border border-white/10;
+    background: rgba(10, 15, 30, 0.7);
+  }
+
+  .glass-shard-light {
+    @apply backdrop-blur-xl border border-white/5;
+    background: rgba(10, 15, 30, 0.5);
+  }
+
+  .kora-transition {
+    transition: all 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(43, 101, 236, 0.3);
+  }
+}
