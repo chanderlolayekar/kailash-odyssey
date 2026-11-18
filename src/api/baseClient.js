@@ -1,10 +1,10 @@
-import { createClient } from '@base/sdk'; //base44 instead
+import { createClient } from '@base44/sdk';
 import { appParams } from '@/lib/app-params';
 
 const { appId, token, functionsVersion, appBaseUrl } = appParams;
 
-//Create a client with authentication required, base44 instead
-export const base = createClient({
+//Create a client with authentication required
+export const base44 = createClient({
   appId,
   token,
   functionsVersion,
