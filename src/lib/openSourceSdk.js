@@ -3,7 +3,6 @@
 
 const LOCAL_COLLECTIONS = {
   User: [],
-  // Map any local JSON datasets here if your components query entities
 };
 
 function createEntityHandler(entityName) {
@@ -42,6 +41,19 @@ function createEntityHandler(entityName) {
 
 export function getAccessToken() {
   return null;
+}
+
+export function createAxiosClient() {
+  return {
+    get: async () => ({ data: {} }),
+    post: async () => ({ data: {} }),
+    put: async () => ({ data: {} }),
+    delete: async () => ({ data: {} }),
+    interceptors: {
+      request: { use: () => {} },
+      response: { use: () => {} },
+    },
+  };
 }
 
 export function createClient(config = {}) {
