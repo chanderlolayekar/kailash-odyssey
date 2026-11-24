@@ -1,4 +1,4 @@
-import { useEffect, useRef, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Polyline, useMap } from 'react-leaflet';
 import { KAILASH_CENTER, KORA_PATH } from '@/lib/koraData';
 import WaypointMarker from './WaypointMarker';
@@ -53,17 +53,11 @@ export default function KoraMap({ waypoints, activeDay, onWaypointClick, savedWa
         attributionControl={false}
         style={{ background: 'hsl(222, 50%, 8%)' }}
       >
-        {/* Terrain base layer */}
+        {/* Terrain base layer (OpenTopoMap - free, keyless) */}
         <TileLayer
           url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
           maxZoom={17}
-        />
-        {/* Subtle dark overlay to maintain color palette */}
-        <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-          attribution=''
-          opacity={0.35}
         />
 
         {/* Glow path */}
@@ -84,8 +78,8 @@ export default function KoraMap({ waypoints, activeDay, onWaypointClick, savedWa
         <MapController activeDay={activeDay} waypoints={waypoints} />
       </MapContainer>
 
-      {/* Map overlay gradient edges */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Subtle dark tint + vignette gradient edges */}
+      <div className="absolute inset-0 pointer-events-none bg-[hsl(222,50%,8%)]/35">
         <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-background/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background/60 to-transparent" />
         <div className="absolute top-0 left-0 bottom-0 w-8 bg-gradient-to-r from-background/40 to-transparent" />
