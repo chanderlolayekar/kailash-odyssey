@@ -1,10 +1,9 @@
-import { createClient } from '@base44/sdk';
+import { createClient } from '@/lib/openSourceSdk';
 import { appParams } from '@/lib/app-params';
 
 const { appId, token, functionsVersion, appBaseUrl } = appParams;
 
-//Create a client with authentication required
-export const base44 = createClient({
+export const base = createClient({
   appId,
   token,
   functionsVersion,
@@ -12,3 +11,5 @@ export const base44 = createClient({
   requiresAuth: false,
   appBaseUrl
 });
+
+export const base44 = base;
